@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs/Rx';
     <h1>Home Component</h1>  
     <hr>
     {{param}}
+    <div id="section"></div>
     `
 })
 export class HomeComponent implements OnDestroy {
