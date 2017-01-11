@@ -1,17 +1,22 @@
 <h1>Data Driven</h1>
-<form>
-    <div>
+<form [FormGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="userData">
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text"
                    class="form-control"
-                   id="username">
+                   id="username"
+                   formControlName="Username">
         </div>
         <div class="form-group">
             <label for="email">E-Mail</label>
             <input type="text"
                    class="form-control"
-                   id="email">
+                   id="email"
+                   formControlName="email">
+            <div *ngIf="!myForm.controls['userData'].controls['email'].valid">
+                Invalid Email                
+            </div>
         </div>
     </div>
 
