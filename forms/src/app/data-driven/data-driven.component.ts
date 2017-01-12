@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
     selector: 'data-driven',
     templateUrl: 'data-driven.component.html'
+   
 })
 export class DataDrivenComponent {
     myForm: FormGroup;
@@ -29,7 +30,7 @@ export class DataDrivenComponent {
           'password': ['', Validators.required],
           'gender': ['male'],
           'hobbies': formBuilder.array([
-              ['Cooking', Validators.required, this.asyncExampleValidator]
+              ['Cooking', Validators.required]
           ])
       });
 
@@ -39,10 +40,10 @@ export class DataDrivenComponent {
     }
 
     onAddHobby(){
-        (<FormArray>this.myForm.controls['hobbies'].push(new FormControl('', Validators.required)));
+        (<FormArray>this.myForm.controls['hobbies']).push(new FormControl('', Validators.required));
     }
 
-    onSubmt(){
+    onSubmit(){
         console.log(this.myForm);
     }
 
