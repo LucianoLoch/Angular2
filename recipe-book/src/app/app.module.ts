@@ -15,6 +15,7 @@ import { RecipeService } from "./recipes/recipe.service";
 import { routing } from './app.routing';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeStartComponent } from './recipes/recipe-start.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { RecipeStartComponent } from './recipes/recipe-start.component';
   ],
   imports: [
     BrowserModule, 
-    routing
+    routing,
+    FormsModule
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [RecipeBookAppComponent]
